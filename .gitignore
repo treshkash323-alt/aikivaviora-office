@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+.venv/
+venv/
+
+# Сборка КП (генерируется build_kp_docx.py)
+КП_готово/
+assets/kp-images/png/
+assets/kp-images/_test.png
