@@ -44,6 +44,9 @@ build_kp_docx.py     — сборка КП в Word
 - [Staff-пользователи](docs/STAFF_USERS.md)  
 - [Деплой Vercel](docs/VERCEL_DEPLOY.md)  
 - [Варианты фронта](docs/FRONTEND_OPTIONS.md)  
+- **[Отчёт MVP-1](docs/Office_MVP1_отчёт_для_сдачи.md)** · **[ПЗ + РЭ](docs/Office_MVP1_РУКОВОДСТВО_И_ПЗ.md)** · [Roadmap](TODO_ROADMAP.md)  
+
+**Статус 11.06.2026:** MVP-1 зафиксирован, пауза до Vercel (tresh, case `01236983`).
 
 ## Репозиторий
 
