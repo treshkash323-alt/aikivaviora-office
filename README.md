@@ -1,26 +1,50 @@
 # AIKIVAVIORA Office
 
-AI-платформа для backoffice отдела продаж и руководства: чат-консультант, квалификация заявок, AI-секретарь, кабинет директора, анализ обращений, маркетинг и админка.
+AI-платформа backoffice для отдела продаж: чат-консультант, заявки, три роли сотрудников, админка заказчика.
 
-## Статус
+**Без бренда «Гранит»** — сразу под заказчика (tenant + заглушки до брифинга).
 
-Подготовка: материалы КП, иллюстрации, черновик документации. Разработка платформы — следующий этап.
+## Быстрый старт
+
+1. [Создать Supabase](docs/SUPABASE_SETUP.md) — проект, миграции, DeepSeek, три пользователя  
+2. Скопировать `.env.example` → `.env`  
+3. `npm install && npm run dev`  
+4. [Деплой фронта](docs/FRONTEND_OPTIONS.md) — Vercel (рекомендуется)
+
+## Роли
+
+| Роль | Доступ |
+|------|--------|
+| **director** | все заявки tenant, обзор (digest в MVP-2) |
+| **manager** | свои / неназначенные заявки |
+| **admin** | настройки компании, KB, все заявки |
 
 ## Структура
 
-- `assets/kp-images/` — иллюстрации для КП
-- `docs/` — черновик коммерческого предложения
-- `build_kp_docx.py` — сборка КП в Word
-
-## Сборка КП
-
-```bash
-pip install python-docx svglib reportlab
-python build_kp_docx.py
+```
+src/                 — Vite + React (чат, login, кабинет)
+supabase/migrations/ — tenants, profiles, leads, chat
+supabase/functions/  — Edge Function chat (DeepSeek)
+docs/                — Supabase setup, варианты фронта
+assets/kp-images/    — материалы КП
+build_kp_docx.py     — сборка КП в Word
 ```
 
-Результат: папка `КП_готово/` (не в git).
+## MVP статус
 
-## Demo-вертикаль
+- [x] Каркас, auth, 3 роли, чат, tenant KB  
+- [x] Авто-создание lead из диалога  
+- [x] Кабинет: заявки, обзор, настройки admin  
+- [ ] AI-секретарь, полный digest директора (MVP-2)  
+- [ ] Звонки, маркетинг (MVP-3)  
 
-«Гранит и Память» — пример отраслевого сценария, не отдельная платформа.
+## Документация
+
+- [Supabase setup](docs/SUPABASE_SETUP.md)  
+- [Staff-пользователи](docs/STAFF_USERS.md)  
+- [Деплой Vercel](docs/VERCEL_DEPLOY.md)  
+- [Варианты фронта](docs/FRONTEND_OPTIONS.md)  
+
+## Репозиторий
+
+https://github.com/treshkash323-alt/aikivaviora-office

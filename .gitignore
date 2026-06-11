@@ -2,8 +2,15 @@ __pycache__/
 *.pyc
 .env
 .env.*
+!.env.example
 .venv/
 venv/
+node_modules/
+dist/
+
+# Supabase local
+supabase/.temp/
+supabase/.branches/
 
 # Сборка КП (генерируется build_kp_docx.py)
 КП_готово/
